@@ -12,6 +12,7 @@ tags:
 ---
 
 >本文介绍在centos7x系统搭LAMP服务器的步骤：
+
 ## 安装Apache ##
 ### 1.使用yum安装apache，执行
 ```shell
