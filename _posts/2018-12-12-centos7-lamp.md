@@ -32,17 +32,17 @@ rpm -qi httpd
 > * 重启Apache：systemctl restart httpd.service
 > * 重启Apache：systemctl restart httpd.service
 
-**5.安装目录介绍**
+**5.安装目录介绍**<br>
 Apache默认将网站的根目录指向/var/www/html
 默认的主配置文件/etc/httpd/conf/httpd.conf
+<br>
 **6.修改默认配置httpd.conf**
-执行
 ```shell
-vi /etc/httpd/conf/httpd.conf
+执行 vi /etc/httpd/conf/httpd.conf
 ```
 找到以下内容：
 ![cmd-result](https://i.loli.net/2018/12/27/5c244194353cb.png)
-将此处的AllowOverride None修改为AllowOverride All
+将此处的AllowOverride None修改为AllowOverride All<br>
 **7.开放80端口（针对centos 7以后的版本）**
 > * 开启端口：firewall-cmd --zone=public --add-port=80/tcp --permanent
 > * 重启防火墙：firewall-cmd --reload
@@ -61,14 +61,14 @@ Rpm -qa | grep mysql
 ```shell
 yum -y remove+数据库名称
 ```
-**2. 卸载Mariadb**
-注意：在新版本的CentOS7中，默认的数据库已更新为了Mariadb，而非 MySQL，所以执行 yum install mysql 命令只是更新Mariadb数据库，并不会安装 MySQL 。
+**2. 卸载Mariadb**<br>
+*注意：在新版本的CentOS7中，默认的数据库已更新为了Mariadb，而非 MySQL，所以执行 yum install mysql 命令只是更新Mariadb数据库，并不会安装 MySQL 。
 查看已安装的Mariadb数据库版本：rpm -qa|grep -i mariadb
 卸载已安装的Mariadb数据库rpm -qa|grep mariadb|xargs rpm -e --nodeps
 再次查看已安装的Mariadb库是否卸载完成
 ![cmd-result](https://i.loli.net/2018/12/27/5c2446e5c8cff.png)
-**3. 安装libaio**
-> MySQL依赖libaio，所以先安装libaio
+**3. 安装libaio**<br>
+MySQL依赖libaio，所以先安装libaio
 > yum search libaio # 检索相关信息
 > yum install libaio # 安装依赖包
 
@@ -87,7 +87,7 @@ yum localinstall mysql-community-release-el7-5.noarch.rpm
 yum localinstall mysql-community-release-el7-5.noarch.rpm
 ```
 ![cmd-result](https://i.loli.net/2018/12/27/5c2447eeb472d.png)
-**7. 选择要启用的MySQL版本**
+**7. 选择要启用的MySQL版本**<br>
 查看MySQL版本，执行：
 ```shell
 yum repolist all | grep mysql
@@ -115,7 +115,7 @@ whereis mysql
 > * 设置MySQL开机启动：systemctl enable mysqld
 
 ![cmd-result](https://i.loli.net/2018/12/27/5c245324ce987.png)
-**10.　防火墙设置**
+**10.　防火墙设置**<br>
 远程访问 MySQL， 需开放默认端口号 3306.
 ```shell
 firewall-cmd --permanent --zone=public --add-port=3306/tcp
@@ -126,7 +126,7 @@ firewall-cmd --permanent --zone=public --add-port=3306/udp
 执行 firewall-cmd --reload 
 ```
 ![cmd-result](https://i.loli.net/2018/12/27/5c2453b2a93fb.png)
-**11.　设置MySQL密码（也可直接进行下一步MySQL安全设置修改root密码）**
+**11.　设置MySQL密码（也可直接进行下一步MySQL安全设置修改root密码）**<br>
 mysql5.6 安装完成后，它的 root 用户的密码默认是空的，我们需要及时用 mysql 的 root 用户登录（第一次直接回车，不用输入密码），并修改密码。
 ```shell
 mysql -u root
@@ -134,7 +134,7 @@ mysql> use mysql;
 mysql> update user set password=PASSWORD("这里输入root用户密码") where User='root';
 mysql> flush privileges; 
 ```
-**12.　MySQL安全设置**
+**12.　MySQL安全设置**<br>
 服务器启动后，可以执行
 ```shell
 mysql_secure_installation;
@@ -159,7 +159,7 @@ rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 yum install php56w php56w-mysql php56w-gd libjpeg* php56w-ldap php56w-odbc php56w-pear php56w-xml php56w-xmlrpc php56w-mbstring php56w-bcmath php56w-pecl-imagick
 ```
 ![cmd-result](https://i.loli.net/2018/12/27/5c2454bfe1126.png)
-**3.　验证安装**
+**3.　验证安装**<br>
 终端命令：PHP -v，显示当前PHP版本。
 查看已安装的php扩展：rpm -qa|grep php
 **4.　修改php配置文件**
