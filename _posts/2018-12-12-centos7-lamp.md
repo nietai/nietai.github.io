@@ -69,8 +69,8 @@ yum -y remove+数据库名称
 ![cmd-result](https://i.loli.net/2018/12/27/5c2446e5c8cff.png)
 **3. 安装libaio**<br>
 MySQL依赖libaio，所以先安装libaio
-> yum search libaio # 检索相关信息
-> yum install libaio # 安装依赖包
+> * yum search libaio # 检索相关信息
+> * yum install libaio # 安装依赖包
 
 ![cmd-result](https://i.loli.net/2018/12/27/5c244737d01a1.png)
 **4. 下载MySQL Yum Repository**
