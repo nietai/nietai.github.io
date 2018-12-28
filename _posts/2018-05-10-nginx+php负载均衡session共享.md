@@ -2,7 +2,7 @@
 layout: post
 title: "nginx＋php负载均衡集群环境中的session共享方案梳理"
 subtitle: "负载均衡、session方案"
-author: "Hux"
+author: "other"
 header-img: "img/post-bg-css.jpg"
 header-mask: 0.4
 tags:
