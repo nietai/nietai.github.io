@@ -1,4 +1,17 @@
-﻿# Centos7x系统--LAMP环境搭建
+﻿---
+layout: post
+title: "Centos7x系统--LAMP环境搭建"
+author: "NieTai"
+header-img: "img/post-bg-infinity.jpg"
+header-mask: 0.3
+mathjax: true
+catalog:    true
+tags:
+  - lamp
+  - centos
+---
+
+# Centos7x系统--LAMP环境搭建
 ---
 本文介绍在centos7x系统搭LAMP服务器的步骤：
 ## 安装Apache ##
