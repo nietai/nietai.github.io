@@ -10,10 +10,8 @@ tags:
   - lamp
   - centos
 ---
+>本文介绍在centos7x系统搭LAMP服务器的步骤：
 
-# Centos7x系统--LAMP环境搭建
----
-本文介绍在centos7x系统搭LAMP服务器的步骤：
 ## 安装Apache ##
  **1.使用yum安装apache，执行**
 ```shell
@@ -164,7 +162,7 @@ yum install php56w php56w-mysql php56w-gd libjpeg* php56w-ldap php56w-odbc php56
 **3.　验证安装**
 终端命令：PHP -v，显示当前PHP版本。
 查看已安装的php扩展：rpm -qa|grep php
-#### 4.　修改php配置文件
+**4.　修改php配置文件**
 ```shell
 vi /etc/php.ini
 upload_max_size = 512M(最大上传文件大小)
